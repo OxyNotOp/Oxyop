@@ -29,7 +29,9 @@ from .logger import logging
 
 LOGS = logging.getLogger(__name__)
 
-HELP_PIC = os.environ.get("HELP_PIC", "https://telegra.ph/file/694802c7df56052e9e12e.jpg")
+HELP_PIC = os.environ.get(
+    "HELP_PIC", "https://telegra.ph/file/694802c7df56052e9e12e.jpg"
+)
 BTN_URL_REGEX = re.compile(r"(\[([^\[]+?)\]\<buttonurl:(?:/{0,2})(.+?)(:same)?\>)")
 CATLOGO = "https://telegra.ph/file/493268c1f5ebedc967eba.jpg"
 tr = Config.COMMAND_HAND_LER
@@ -371,7 +373,7 @@ async def inline_handler(event):  # sourcery no-metrics
             if HELP_PIC and HELP_PIC.endswith((".jpg", ".jpeg", ".png")):
                 result = builder.photo(
                     HELP_PIC,
-                    #title="Help Menu",
+                    # title="Help Menu",
                     text=_result[0],
                     buttons=_result[1],
                 )
